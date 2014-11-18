@@ -1,0 +1,14 @@
+1:连接
+ClientNet cn = ClientNet.Singleton;
+cn.ConnectIP(GameConfig.SERVER_HOST, GameConfig.SERVER_PORT);
+
+2：发消息command
+
+MsgLoginReq loginInfo = new MsgLoginReq();
+loginInfo.idkey = DataFormat.stringToByte(infoInput);
+socketConnect.sendToServer(loginInfo);   
+
+3：收消息command
+ MsgLoginAck loginAck = (MsgLoginAck)note.data;
+
+
